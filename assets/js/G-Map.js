@@ -341,6 +341,7 @@ swap.addEventListener("click", () => {
   location.reload();
 });
 
+//For removal of div of dialog box
 body[0].onclick = () => {
   try {
     removal(divControl);
@@ -376,6 +377,7 @@ const displacementCalculator = (x1, y1, x2, y2) => {
   );
 };
 
+//Adjusted the width for backyard map line
 function createLine(x1, y1, x2, y2, lineId) {
   let distance = displacementCalculator(x1, y1, x2, y2);
   let xMid = (x1 + x2) / 2;
@@ -794,19 +796,17 @@ function greenAttachment(
 }
 
 export function room_click(id_num) {
-  let exceptions;
-  exceptions = Number.parseInt(id_num).toString();
   if (
     !(
-      exceptions == "NaN" ||
-      exceptions == "6" ||
-      exceptions == "71" ||
-      exceptions == "5" ||
-      exceptions == "39" ||
-      exceptions == "4" ||
-      exceptions == "3" ||
-      exceptions == "102" ||
-      exceptions == "82"
+      id_num == "NaN" ||
+      id_num == "6" ||
+      id_num == "71" ||
+      id_num == "5" ||
+      id_num == "39" ||
+      id_num == "4" ||
+      id_num == "3" ||
+      id_num == "102" ||
+      id_num == "82"
     )
   ) {
     Information(id_num);
@@ -1086,8 +1086,8 @@ const finalEnd = () => {
     starts >= 115 &&
     starts <= 204 &&
     !(endd >= 115 && endd <= 204) &&
-    endd != null &&
     map_no != "2" &&
+    endd != null &&
     endd != undefined &&
     endd != "null" &&
     endd != "undefined"
