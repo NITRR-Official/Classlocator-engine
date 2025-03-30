@@ -131,7 +131,7 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0 0 20px 0;
   padding: 0;
 }
@@ -362,7 +362,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation - Improved for Responsiveness
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -393,6 +393,9 @@ h6 {
   background: rgba(26, 26, 26, 0.9);
   transition: 0.3s;
   z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-mobile .mobile-nav-toggle {
@@ -402,79 +405,42 @@ h6 {
 }
 
 .navbar-mobile ul {
-  display: block;
-  position: absolute;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
-  padding: 10px 0;
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
   overflow-y: auto;
+  width: 90%;
+  max-width: 400px;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.navbar-mobile ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.navbar-mobile ul::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.navbar-mobile li {
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.navbar-mobile a {
+  color: #333;
+  text-decoration: none;
   transition: 0.3s;
 }
 
-.navbar-mobile>ul>li {
-  padding: 0;
-}
-
-.navbar-mobile a:hover:before,
-.navbar-mobile li:hover>a:before,
-.navbar-mobile .active:before {
-  visibility: hidden;
-}
-
-.navbar-mobile a,
-.navbar-mobile a:focus {
-  padding: 10px 20px;
-  font-size: 15px;
-  color: #333333;
-}
-
-.navbar-mobile a:hover,
-.navbar-mobile .active,
-.navbar-mobile li:hover>a {
+.navbar-mobile a:hover {
   color: #1dc8cd;
 }
 
-.navbar-mobile .getstarted,
-.navbar-mobile .getstarted:focus {
-  margin: 15px;
-}
-
-.navbar-mobile .dropdown ul {
-  position: static;
-  display: none;
-  margin: 10px 20px;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 1;
-  visibility: visible;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-}
-
-.navbar-mobile .dropdown ul li {
-  min-width: 200px;
-}
-
-.navbar-mobile .dropdown ul a {
-  padding: 10px 20px;
-}
-
-.navbar-mobile .dropdown ul a i {
-  font-size: 12px;
-}
-
-.navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
-  color: #1dc8cd;
-}
-
-.navbar-mobile .dropdown>.dropdown-active {
-  display: block;
-}
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -806,8 +772,8 @@ section {
 }
 
 #team .member h4 {
-  font-weight: 700;
-  margin-bottom: 2px;
+  font-weight: 800;
+  margin-bottom: 5px;
   font-size: 18px;
 }
 
