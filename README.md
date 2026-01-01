@@ -7,6 +7,8 @@
 
 - [At Netlify](https://nitrr-class-locator.netlify.app/)
 
+- [At AWS S3](http://daks-bucket-learning.s3-website.ap-south-1.amazonaws.com)
+
 
 
 ## Ambition
