@@ -1,6 +1,5 @@
 let key = sessionStorage.getItem("map_no");
-import {room_click} from './G-Map.js';
-import {map_no,map0,map1,map2,map3} from './G-Map.js'
+import {room_click,map_no,map0,map1,map2,map3} from './G-Map.js';
 let svgMap = document.querySelectorAll("#removal div svg");
 let initialRotate = parseInt(sessionStorage.getItem("rotate"));
 let scaless = 1,pannings = false, pointXXOld=0, pointYYOld=0, pointXX = 0, pointYY = 0,starts = {x:0,y:0};
@@ -186,8 +185,7 @@ svgMap.onwheel = function(e){
       pointYYOld = pointYY = (e.clientY - ys * scaless);
     }
     else
-    {
-      if(scaless == 1)
+    if(scaless == 1)
         {scaless = 1;pointXXOld = pointXX = 0;pointYYOld = pointYY = 0;}
       else
         {
@@ -195,7 +193,6 @@ svgMap.onwheel = function(e){
           pointXXOld = pointXX = e.clientX - xs * scaless;
           pointYYOld = pointYY = e.clientY - ys * scaless;
         }
-    }
     setTransform(pointXX,pointYY,scaless);
 }
 
@@ -208,7 +205,7 @@ svgMap.onpointermove = function(ev){
         const curDiff = Math.round(Math.sqrt((evCache[0].clientX - evCache[1].clientX)*(evCache[0].clientX - evCache[1].clientX)+ 
           (evCache[0].clientY - evCache[1].clientY) *(evCache[0].clientY - evCache[1].clientY)));
         if(prevDiff>0){
-          var xs = (midPointX - pointXX)/scaless,
+          let xs = (midPointX - pointXX)/scaless,
           ys = (midPointY - pointYY)/scaless;
           if(curDiff > prevDiff){
             scaless += 0.05;
